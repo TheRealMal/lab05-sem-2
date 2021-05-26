@@ -12,13 +12,13 @@ addons:
 language: cpp
 
 compiler:
-	- clang
-  - gcc
+ - clang
+ - gcc
 
 before_install:
-	- pip install --user cpp-coveralls
+ - pip install --user cpp-coveralls
 
 script:
-	- cmake -H. -Bbuild -DBUILD_TESTS=ON -DCOVERAGE=ON
-	- cmake --build build/
-	- cmake --build build --target test -- ARGS=--verbose
+ - cmake -H. -Bbuild -DBUILD_TESTS=ON -DCOVERAGE=ON
+ - cmake --build build/
+ - cmake --build build --target test -- ARGS=--verbose
