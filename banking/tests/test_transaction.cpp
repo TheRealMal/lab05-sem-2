@@ -34,7 +34,7 @@ TEST(Transaction, TestTransaction) {
     EXPECT_THROW(tr.Make(a1, a2, 90), std::logic_error);
     EXPECT_THROW(tr.Make(a1, a2, -1), std::invalid_argument);
     EXPECT_THROW(tr.Make(a1, a1, 100), std::logic_error);
-    EXPECT_FALSE(tr.Make(a1, a2, 400));
-    EXPECT_FALSE(tr.Make(a2, a1, 300));
+    EXPECT_TRUE(tr.Make(a1, a2, 400));
+    EXPECT_TRUE(tr.Make(a2, a1, 300));
     EXPECT_TRUE(tr.Make(a2, a1, 246));
 }
